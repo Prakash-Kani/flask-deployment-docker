@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  app:
+    container_name: flask-app  # Name for the app container
+    build: .
+    ports:
+      - "8501:8501"
+    environment:
+      - FLASK_ENV=production
+    volumes:
+      - .:/usr/src/flask-app
+    # command: ["waitress-serve", "--port=8501", "app:app"]
